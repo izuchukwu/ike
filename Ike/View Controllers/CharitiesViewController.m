@@ -9,7 +9,7 @@
 #import "CharitiesViewController.h"
 
 #import "IKCharities.h"
-#import "CauseViewController.h"
+#import "CharityViewController.h"
 
 @interface CharitiesViewController ()
 
@@ -53,8 +53,8 @@
 }
 
 - (void)didSelectCharity:(IKCharity *)charity {
-    CauseViewController *causevc = [[CauseViewController alloc] initWithCharity:charity];
-    [[self navigationController] pushViewController:causevc animated:YES];
+    CharityViewController *charityvc = [[CharityViewController alloc] initWithCharity:charity];
+    [[self navigationController] pushViewController:charityvc animated:YES];
 }
 
 @end

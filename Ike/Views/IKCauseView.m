@@ -18,9 +18,7 @@
 @property (nonatomic) int slide;
 @property (nonatomic) BOOL isForward;
 
-@property (nonatomic) BOOL isCause;
-@property (nonatomic) IKCharity *currentCh;
-
+@property (nonatomic) NSMutableArray *areCauses;
 @end
 
 @implementation IKCauseView
@@ -34,6 +32,7 @@
         [_scrollView setShowsHorizontalScrollIndicator:NO];
         [self addSubview:_scrollView];
         _photoImageViews = [[NSMutableArray alloc] init];
+        _areCauses = [[NSMutableArray alloc] init];
         
         UITapGestureRecognizer *tapg = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
         [_scrollView addGestureRecognizer:tapg];
@@ -42,13 +41,16 @@
 }
 
 - (void)didTap {
-    if (_isCause) {
+    CGFloat offset = [_scrollView contentOffset].x;
+    int page = offset / self.frame.size.width;
+    
+    if ([[_areCauses objectAtIndex:page] boolValue]) {
         if (_delegate && [_delegate respondsToSelector:@selector(didSelectCause:)]) {
-            [_delegate didSelectCause:_currentCh];
+            [_delegate didSelectCause:[_charities objectAtIndex:page]];
         }
     } else {
         if (_delegate && [_delegate respondsToSelector:@selector(didSelectCharity:)]) {
-            [_delegate didSelectCharity:_currentCh];
+            [_delegate didSelectCharity:[_charities objectAtIndex:page]];
         }
     }
     
@@ -71,14 +73,14 @@
         UIImageView *photoImageView = [[UIImageView alloc] initWithFrame:frame];
         [photoImageView setContentMode:UIViewContentModeScaleAspectFill];
         if (_displaysCharitiesNotCauses) {
-            _isCause = NO;
+            [_areCauses addObject:@NO];
             [photoImageView setImage:[ch banner]];
         } else {
             if ([ch causeBanner]) {
-                _isCause = YES;
+                [_areCauses addObject:@YES];
                 [photoImageView setImage:[ch causeBanner]];
             } else {
-                _isCause = NO;
+                [_areCauses addObject:@NO];
                 [photoImageView setImage:[ch banner]];
             }
         }
@@ -86,8 +88,6 @@
         [_photoImageViews addObject:photoImageView];
         photoNo++;
     }
-    
-    _currentCh = [_charities objectAtIndex:0];
     
     if ([_photoImageViews count] > 1) {
         _timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(advance) userInfo:nil repeats:YES];
@@ -110,7 +110,6 @@
         _slide--;
     }
     
-    _currentCh = [_charities objectAtIndex:_slide];
     [_scrollView scrollRectToVisible:[[_photoImageViews objectAtIndex:_slide] frame] animated:YES];
 }
 

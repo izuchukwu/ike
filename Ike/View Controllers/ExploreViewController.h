@@ -11,6 +11,7 @@
 
 #import "IKCauseView.h"
 #import "CauseViewController.h"
+#import "CharityViewController.h"
 
 @interface ExploreViewController : UIViewController<IKCauseViewDelegate>
 

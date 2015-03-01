@@ -35,6 +35,10 @@
 		86F460451AA3490600082F58 /* CauseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F460441AA3490600082F58 /* CauseViewController.m */; };
 		86F460491AA34B5000082F58 /* IKCauseMetaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F460481AA34B5000082F58 /* IKCauseMetaView.m */; };
 		86F4604B1AA34B7A00082F58 /* IKCauseMetaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F4604A1AA34B7A00082F58 /* IKCauseMetaView.xib */; };
+		86F460501AA3574200082F58 /* IKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4604F1AA3574200082F58 /* IKNavigationController.m */; };
+		86F460541AA359B100082F58 /* CharityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F460531AA359B100082F58 /* CharityViewController.m */; };
+		86F460581AA35A1900082F58 /* IKCharityMetaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F460571AA35A1900082F58 /* IKCharityMetaView.m */; };
+		86F4605A1AA35A3500082F58 /* IKCharityMetaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F460591AA35A3500082F58 /* IKCharityMetaView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +100,13 @@
 		86F460471AA34B5000082F58 /* IKCauseMetaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IKCauseMetaView.h; path = Views/IKCauseMetaView.h; sourceTree = "<group>"; };
 		86F460481AA34B5000082F58 /* IKCauseMetaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IKCauseMetaView.m; path = Views/IKCauseMetaView.m; sourceTree = "<group>"; };
 		86F4604A1AA34B7A00082F58 /* IKCauseMetaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IKCauseMetaView.xib; path = Views/IKCauseMetaView.xib; sourceTree = "<group>"; };
+		86F4604E1AA3574200082F58 /* IKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IKNavigationController.h; path = "Navigation Controller/IKNavigationController.h"; sourceTree = "<group>"; };
+		86F4604F1AA3574200082F58 /* IKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IKNavigationController.m; path = "Navigation Controller/IKNavigationController.m"; sourceTree = "<group>"; };
+		86F460521AA359B100082F58 /* CharityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CharityViewController.h; path = "View Controllers/CharityViewController.h"; sourceTree = "<group>"; };
+		86F460531AA359B100082F58 /* CharityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CharityViewController.m; path = "View Controllers/CharityViewController.m"; sourceTree = "<group>"; };
+		86F460561AA35A1900082F58 /* IKCharityMetaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IKCharityMetaView.h; path = Views/IKCharityMetaView.h; sourceTree = "<group>"; };
+		86F460571AA35A1900082F58 /* IKCharityMetaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IKCharityMetaView.m; path = Views/IKCharityMetaView.m; sourceTree = "<group>"; };
+		86F460591AA35A3500082F58 /* IKCharityMetaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IKCharityMetaView.xib; path = Views/IKCharityMetaView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				869A72A41AA28B5B00F0AA17 /* Main.storyboard */,
+				86F460511AA3597B00082F58 /* CharityViewController */,
 				86F460421AA348E100082F58 /* CauseViewController */,
 				86F4603E1AA340E400082F58 /* Charities */,
 				869A72F61AA2B90200F0AA17 /* Explore */,
@@ -245,6 +257,7 @@
 		86F460201AA2F61000082F58 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				86F460551AA359FD00082F58 /* IKCharityMetaView */,
 				86F460461AA34B3500082F58 /* IKCauseMetaView */,
 				86F460251AA3070A00082F58 /* IKTeeView */,
 				86F460241AA3035300082F58 /* IKCauseView */,
@@ -343,17 +356,38 @@
 		86F4604C1AA356BC00082F58 /* Meta Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				86F4604D1AA356C700082F58 /* New Group */,
+				86F4604D1AA356C700082F58 /* Navigation Controller */,
 				86F4601A1AA2CFF200082F58 /* Tab Bar Controller */,
 			);
 			name = "Meta Controllers";
 			sourceTree = "<group>";
 		};
-		86F4604D1AA356C700082F58 /* New Group */ = {
+		86F4604D1AA356C700082F58 /* Navigation Controller */ = {
 			isa = PBXGroup;
 			children = (
+				86F4604E1AA3574200082F58 /* IKNavigationController.h */,
+				86F4604F1AA3574200082F58 /* IKNavigationController.m */,
 			);
-			name = "New Group";
+			name = "Navigation Controller";
+			sourceTree = "<group>";
+		};
+		86F460511AA3597B00082F58 /* CharityViewController */ = {
+			isa = PBXGroup;
+			children = (
+				86F460521AA359B100082F58 /* CharityViewController.h */,
+				86F460531AA359B100082F58 /* CharityViewController.m */,
+			);
+			name = CharityViewController;
+			sourceTree = "<group>";
+		};
+		86F460551AA359FD00082F58 /* IKCharityMetaView */ = {
+			isa = PBXGroup;
+			children = (
+				86F460561AA35A1900082F58 /* IKCharityMetaView.h */,
+				86F460571AA35A1900082F58 /* IKCharityMetaView.m */,
+				86F460591AA35A3500082F58 /* IKCharityMetaView.xib */,
+			);
+			name = IKCharityMetaView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +473,7 @@
 				869A72D11AA2A2DC00F0AA17 /* Media.xcassets in Resources */,
 				869A72CB1AA2A15A00F0AA17 /* SignInViewController.xib in Resources */,
 				869A72A61AA28B5B00F0AA17 /* Main.storyboard in Resources */,
+				86F4605A1AA35A3500082F58 /* IKCharityMetaView.xib in Resources */,
 				86F4604B1AA34B7A00082F58 /* IKCauseMetaView.xib in Resources */,
 				86F4601F1AA2D06300082F58 /* IKTabBarController.xib in Resources */,
 				869A72AB1AA28B5B00F0AA17 /* LaunchScreen.xib in Resources */,
@@ -462,6 +497,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				86F460451AA3490600082F58 /* CauseViewController.m in Sources */,
+				86F460501AA3574200082F58 /* IKNavigationController.m in Sources */,
+				86F460541AA359B100082F58 /* CharityViewController.m in Sources */,
 				86F460231AA2F68600082F58 /* IKCauseView.m in Sources */,
 				86F460411AA340FD00082F58 /* CharitiesViewController.m in Sources */,
 				86F460491AA34B5000082F58 /* IKCauseMetaView.m in Sources */,
@@ -475,6 +512,7 @@
 				86F4602E1AA30B1800082F58 /* IKTee.m in Sources */,
 				86F460371AA30BFD00082F58 /* IKDesigner.m in Sources */,
 				869A729A1AA28B5B00F0AA17 /* main.m in Sources */,
+				86F460581AA35A1900082F58 /* IKCharityMetaView.m in Sources */,
 				86F4601E1AA2D06300082F58 /* IKTabBarController.m in Sources */,
 				869A72F91AA2B93700F0AA17 /* ExploreViewController.m in Sources */,
 				86F4603A1AA30F0100082F58 /* IKCharities.m in Sources */,

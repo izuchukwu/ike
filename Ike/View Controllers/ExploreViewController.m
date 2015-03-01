@@ -36,7 +36,6 @@
     _charities = @[[IKCharities acs], [IKCharities unicef], [IKCharities who], [IKCharities wwf], [IKCharities wwp]];
     
     self.navigationItem.titleView = titleBarImageView;
-    [self navigationController] setTitle:<#(NSString *)#>
     
     [self signIn];
     
@@ -51,7 +50,7 @@
     [self.view addSubview:_scrollView];
     NSArray *rtees = [IKTees randomTees];
     
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 4; i++) {
         IKTee *tee = [rtees objectAtIndex:i];
         CGRect fr = CGRectMake(0, causeView.frame.size.height + (i * 400) + ((i + 1) * 15), 0, 0);
         IKTeeView *teeView = [[IKTeeView alloc] initWithFrame:fr];
@@ -63,13 +62,13 @@
         }
     }
     
-    UIImageView *footer = [[UIImageView alloc] initWithFrame:CGRectMake(0, 15 + causeView.frame.size.height + (([[IKTees tees] count] > 3 ? 3 : [[IKTees tees] count]) * 400) + (([[IKTees tees] count] > 3 ? 3 : [[IKTees tees] count]) * 15), _scrollView.frame.size.width, 60)];
+    UIImageView *footer = [[UIImageView alloc] initWithFrame:CGRectMake(0, 15 + causeView.frame.size.height + (([[IKTees tees] count] > 4 ? 4 : [[IKTees tees] count]) * 400) + (([[IKTees tees] count] > 4 ? 4 : [[IKTees tees] count]) * 15), _scrollView.frame.size.width, 60)];
     [footer setImage:[UIImage imageNamed:@"footer-ike"]];
     [footer setAlpha:0.15];
     [_scrollView addSubview:footer];
     [footer setContentMode:UIViewContentModeCenter];
     
-    [_scrollView setContentSize:CGSizeMake(_scrollView.frame.size.width, 64 + causeView.frame.size.height + (([[IKTees tees] count] > 3 ? 3 : [[IKTees tees] count]) * 400) + (([[IKTees tees] count] > 3 ? 3 : [[IKTees tees] count]) * 15))];
+    [_scrollView setContentSize:CGSizeMake(_scrollView.frame.size.width, 64 + causeView.frame.size.height + (([[IKTees tees] count] > 4 ? 4 : [[IKTees tees] count]) * 400) + (([[IKTees tees] count] > 4 ? 4 : [[IKTees tees] count]) * 15))];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -90,8 +89,8 @@
 }
 
 - (void)didSelectCharity:(IKCharity *)charity {
-    CauseViewController *causevc = [[CauseViewController alloc] initWithCharity:charity];
-    [[self navigationController] pushViewController:causevc animated:YES];
+    CharityViewController *charityvc = [[CharityViewController alloc] initWithCharity:charity];
+    [[self navigationController] pushViewController:charityvc animated:YES];
 }
 
 - (void)didSelectCause:(IKCharity *)charity {
