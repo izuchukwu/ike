@@ -10,7 +10,19 @@
 
 #import "IKCharity.h"
 
+@protocol IKCauseViewDelegate <NSObject>
+
+@optional
+
+- (void)didSelectCharity:(IKCharity *)charity;
+- (void)didSelectCause:(IKCharity *)charity;
+
+@end
+
 @interface IKCauseView : UIView
+
+@property (nonatomic) id<IKCauseViewDelegate> delegate;
+@property (nonatomic) BOOL displaysCharitiesNotCauses;
 
 - (void)displayCharities:(NSArray *)charities;
 

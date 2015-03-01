@@ -13,5 +13,6 @@
 @interface IKTees : NSObject
 
 + (NSArray *)tees;
++ (NSArray *)randomTees;
 
 @end

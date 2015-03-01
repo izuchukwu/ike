@@ -24,4 +24,6 @@
 @property (nonatomic) NSString *causeFight; // for the shirts eg. "the Fight Against Ebola", "working For the Brave"
 @property (nonatomic, retain) UIImage *causeBanner;
 
+- (NSString *)about;
+
 @end

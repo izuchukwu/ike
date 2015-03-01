@@ -12,11 +12,11 @@
 
 @interface IKCharities : NSObject
 
-+ (IKCharity *)acs;
-+ (IKCharity *)who;
-+ (IKCharity *)wwf;
-+ (IKCharity *)unicef;
-+ (IKCharity *)wwp;
++(IKCharity *)acs;
++(IKCharity *)who;
++(IKCharity *)wwf;
++(IKCharity *)unicef;
++(IKCharity *)wwp;
 
 
 @end

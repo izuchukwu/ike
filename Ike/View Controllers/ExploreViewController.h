@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Accounts/Accounts.h>
 
-@interface ExploreViewController : UIViewController
+#import "IKCauseView.h"
+#import "CauseViewController.h"
+
+@interface ExploreViewController : UIViewController<IKCauseViewDelegate>
 
 @end

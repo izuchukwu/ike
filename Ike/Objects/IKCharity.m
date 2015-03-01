@@ -10,4 +10,8 @@
 
 @implementation IKCharity
 
+- (NSString *)about {
+    return [NSString stringWithFormat:@"Benefiting the %@\nin %@", [self name], [self causeFight]];
+}
+
 @end

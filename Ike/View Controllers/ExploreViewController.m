@@ -9,7 +9,6 @@
 #import "ExploreViewController.h"
 #import "SignInViewController.h"
 
-#import "IKCauseView.h"
 #import "IKCharities.h"
 #import "IKTees.h"
 #import "IKTeeView.h"
@@ -34,9 +33,10 @@
     [titleBarImageView setContentMode:UIViewContentModeScaleAspectFit];
     [titleBarImageView setImage:[UIImage imageNamed:@"navbar-ike"]];
     
-    _charities = @[[IKCharities acs], [IKCharities who]];
+    _charities = @[[IKCharities acs], [IKCharities unicef], [IKCharities who], [IKCharities wwf], [IKCharities wwp]];
     
     self.navigationItem.titleView = titleBarImageView;
+    [self navigationController] setTitle:<#(NSString *)#>
     
     [self signIn];
     
@@ -45,12 +45,14 @@
     [_scrollView setUserInteractionEnabled:YES];
     
     IKCauseView *causeView = [[IKCauseView alloc] initWithFrame:self.view.frame];
+    [causeView setDelegate:self];
     [causeView displayCharities:_charities];
     [_scrollView addSubview:causeView];
     [self.view addSubview:_scrollView];
+    NSArray *rtees = [IKTees randomTees];
     
     for (int i = 0; i < 3; i++) {
-        IKTee *tee = [[IKTees tees] objectAtIndex:i];
+        IKTee *tee = [rtees objectAtIndex:i];
         CGRect fr = CGRectMake(0, causeView.frame.size.height + (i * 400) + ((i + 1) * 15), 0, 0);
         IKTeeView *teeView = [[IKTeeView alloc] initWithFrame:fr];
         [teeView displayTee:tee];
@@ -85,6 +87,16 @@
         ACAccountStore *store = [[ACAccountStore alloc] init];
         NSLog(@"Signed In as %@", [[store accountWithIdentifier:_accountID] username]);
     }
+}
+
+- (void)didSelectCharity:(IKCharity *)charity {
+    CauseViewController *causevc = [[CauseViewController alloc] initWithCharity:charity];
+    [[self navigationController] pushViewController:causevc animated:YES];
+}
+
+- (void)didSelectCause:(IKCharity *)charity {
+    CauseViewController *causevc = [[CauseViewController alloc] initWithCharity:charity];
+    [[self navigationController] pushViewController:causevc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

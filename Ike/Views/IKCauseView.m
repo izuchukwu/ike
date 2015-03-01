@@ -18,6 +18,9 @@
 @property (nonatomic) int slide;
 @property (nonatomic) BOOL isForward;
 
+@property (nonatomic) BOOL isCause;
+@property (nonatomic) IKCharity *currentCh;
+
 @end
 
 @implementation IKCauseView
@@ -31,8 +34,24 @@
         [_scrollView setShowsHorizontalScrollIndicator:NO];
         [self addSubview:_scrollView];
         _photoImageViews = [[NSMutableArray alloc] init];
+        
+        UITapGestureRecognizer *tapg = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
+        [_scrollView addGestureRecognizer:tapg];
     }
     return self;
+}
+
+- (void)didTap {
+    if (_isCause) {
+        if (_delegate && [_delegate respondsToSelector:@selector(didSelectCause:)]) {
+            [_delegate didSelectCause:_currentCh];
+        }
+    } else {
+        if (_delegate && [_delegate respondsToSelector:@selector(didSelectCharity:)]) {
+            [_delegate didSelectCharity:_currentCh];
+        }
+    }
+    
 }
 
 - (void)displayCharities:(NSArray *)charities {
@@ -51,15 +70,30 @@
         frame.origin.x = photoNo * _scrollView.bounds.size.width;
         UIImageView *photoImageView = [[UIImageView alloc] initWithFrame:frame];
         [photoImageView setContentMode:UIViewContentModeScaleAspectFill];
-        [photoImageView setImage:[ch causeBanner]];
+        if (_displaysCharitiesNotCauses) {
+            _isCause = NO;
+            [photoImageView setImage:[ch banner]];
+        } else {
+            if ([ch causeBanner]) {
+                _isCause = YES;
+                [photoImageView setImage:[ch causeBanner]];
+            } else {
+                _isCause = NO;
+                [photoImageView setImage:[ch banner]];
+            }
+        }
         [_scrollView addSubview:photoImageView];
         [_photoImageViews addObject:photoImageView];
         photoNo++;
     }
     
+    _currentCh = [_charities objectAtIndex:0];
+    
     if ([_photoImageViews count] > 1) {
-        _timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(advance) userInfo:nil repeats:YES];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(advance) userInfo:nil repeats:YES];
     }
+    
+    
 }
 
 - (void)advance {
@@ -76,6 +110,7 @@
         _slide--;
     }
     
+    _currentCh = [_charities objectAtIndex:_slide];
     [_scrollView scrollRectToVisible:[[_photoImageViews objectAtIndex:_slide] frame] animated:YES];
 }
 
