@@ -9,10 +9,16 @@
 #import "ExploreViewController.h"
 #import "SignInViewController.h"
 
+#import "IKCauseView.h"
+#import "IKCharities.h"
+#import "IKTees.h"
+#import "IKTeeView.h"
+
 @interface ExploreViewController ()
 
 @property (nonatomic) UIScrollView *scrollView;
 @property (nonatomic) NSString *accountID;
+@property (nonatomic) NSArray *charities;
 
 @end
 
@@ -26,13 +32,42 @@
     frame.size.width = 67;
     [titleBarImageView setFrame:frame];
     [titleBarImageView setContentMode:UIViewContentModeScaleAspectFit];
-    //[titleBarImageView setImage:[UIImage imageNamed:kNavBarTitleImageSnoo]];
+    [titleBarImageView setImage:[UIImage imageNamed:@"navbar-ike"]];
+    
+    _charities = @[[IKCharities acs], [IKCharities who]];
     
     self.navigationItem.titleView = titleBarImageView;
     
     [self signIn];
     
     _scrollView = [[UIScrollView alloc] initWithFrame:[[self view] frame]];
+    [_scrollView setShowsVerticalScrollIndicator:NO];
+    [_scrollView setUserInteractionEnabled:YES];
+    
+    IKCauseView *causeView = [[IKCauseView alloc] initWithFrame:self.view.frame];
+    [causeView displayCharities:_charities];
+    [_scrollView addSubview:causeView];
+    [self.view addSubview:_scrollView];
+    
+    for (int i = 0; i < 3; i++) {
+        IKTee *tee = [[IKTees tees] objectAtIndex:i];
+        CGRect fr = CGRectMake(0, causeView.frame.size.height + (i * 400) + ((i + 1) * 15), 0, 0);
+        IKTeeView *teeView = [[IKTeeView alloc] initWithFrame:fr];
+        [teeView displayTee:tee];
+        [_scrollView addSubview:teeView];
+        
+        if (([[IKTees tees] count] - 1) == i) {
+            break;
+        }
+    }
+    
+    UIImageView *footer = [[UIImageView alloc] initWithFrame:CGRectMake(0, 15 + causeView.frame.size.height + (([[IKTees tees] count] > 3 ? 3 : [[IKTees tees] count]) * 400) + (([[IKTees tees] count] > 3 ? 3 : [[IKTees tees] count]) * 15), _scrollView.frame.size.width, 60)];
+    [footer setImage:[UIImage imageNamed:@"footer-ike"]];
+    [footer setAlpha:0.15];
+    [_scrollView addSubview:footer];
+    [footer setContentMode:UIViewContentModeCenter];
+    
+    [_scrollView setContentSize:CGSizeMake(_scrollView.frame.size.width, 64 + causeView.frame.size.height + (([[IKTees tees] count] > 3 ? 3 : [[IKTees tees] count]) * 400) + (([[IKTees tees] count] > 3 ? 3 : [[IKTees tees] count]) * 15))];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
