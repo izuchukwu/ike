@@ -61,7 +61,11 @@
         ACAccount *account = [_accounts objectAtIndex:(buttonIndex - 1)];
         NSLog(@"Signing In with %@", [account username]);
         [[NSUserDefaults standardUserDefaults] setObject:[account identifier] forKey:@"account-identifier"];
+        
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [self dismissModalViewControllerAnimated:YES];
+#pragma clang diagnostic pop
     }
 }
 

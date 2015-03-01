@@ -1,5 +1,5 @@
 //
-//  HomeViewController.h
+//  ExploreViewController.h
 //  Ike
 //
 //  Created by Izuchukwu Elechi on 2/28/15.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Accounts/Accounts.h>
 
-@interface HomeViewController : UIViewController
+@interface ExploreViewController : UIViewController
 
 @end
