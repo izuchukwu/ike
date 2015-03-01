@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "SignInViewController.h"
 
 @interface FirstViewController ()
 
@@ -17,6 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    SignInViewController *signIn = [[SignInViewController alloc] init];
+    [self presentViewController:signIn animated:YES completion:^{
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

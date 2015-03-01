@@ -15,6 +15,12 @@
 		869A72A81AA28B5B00F0AA17 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 869A72A71AA28B5B00F0AA17 /* Images.xcassets */; };
 		869A72AB1AA28B5B00F0AA17 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869A72A91AA28B5B00F0AA17 /* LaunchScreen.xib */; };
 		869A72B71AA28B5B00F0AA17 /* IkeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 869A72B61AA28B5B00F0AA17 /* IkeTests.m */; };
+		869A72CA1AA2A15A00F0AA17 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869A72C81AA2A15A00F0AA17 /* SignInViewController.m */; };
+		869A72CB1AA2A15A00F0AA17 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869A72C91AA2A15A00F0AA17 /* SignInViewController.xib */; };
+		869A72D11AA2A2DC00F0AA17 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 869A72D01AA2A2DC00F0AA17 /* Media.xcassets */; };
+		869A72D41AA2AAA000F0AA17 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869A72D31AA2AAA000F0AA17 /* Accounts.framework */; };
+		869A72D61AA2AAA400F0AA17 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869A72D51AA2AAA400F0AA17 /* Social.framework */; };
+		869A72F91AA2B93700F0AA17 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869A72F81AA2B93700F0AA17 /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +49,14 @@
 		869A72B01AA28B5B00F0AA17 /* IkeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IkeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		869A72B51AA28B5B00F0AA17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		869A72B61AA28B5B00F0AA17 /* IkeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IkeTests.m; sourceTree = "<group>"; };
+		869A72C71AA2A15A00F0AA17 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInViewController.h; path = "View Controllers/SignInViewController.h"; sourceTree = "<group>"; };
+		869A72C81AA2A15A00F0AA17 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInViewController.m; path = "View Controllers/SignInViewController.m"; sourceTree = "<group>"; };
+		869A72C91AA2A15A00F0AA17 /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInViewController.xib; path = "View Controllers/SignInViewController.xib"; sourceTree = "<group>"; };
+		869A72D01AA2A2DC00F0AA17 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		869A72D31AA2AAA000F0AA17 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		869A72D51AA2AAA400F0AA17 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		869A72F71AA2B93700F0AA17 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = "View Controllers/HomeViewController.h"; sourceTree = "<group>"; };
+		869A72F81AA2B93700F0AA17 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = "View Controllers/HomeViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869A72D61AA2AAA400F0AA17 /* Social.framework in Frameworks */,
+				869A72D41AA2AAA000F0AA17 /* Accounts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +82,9 @@
 		869A728B1AA28B5B00F0AA17 = {
 			isa = PBXGroup;
 			children = (
+				869A72D21AA2AA8400F0AA17 /* Frameworks */,
+				869A72C01AA28D8800F0AA17 /* View Controllers */,
+				869A72D01AA2A2DC00F0AA17 /* Media.xcassets */,
 				869A72961AA28B5B00F0AA17 /* Ike */,
 				869A72B31AA28B5B00F0AA17 /* IkeTests */,
 				869A72951AA28B5B00F0AA17 /* Products */,
@@ -122,6 +141,43 @@
 				869A72B51AA28B5B00F0AA17 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		869A72C01AA28D8800F0AA17 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				869A72F61AA2B90200F0AA17 /* Home */,
+				869A72C11AA28D9100F0AA17 /* Sign In */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		869A72C11AA28D9100F0AA17 /* Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				869A72C71AA2A15A00F0AA17 /* SignInViewController.h */,
+				869A72C81AA2A15A00F0AA17 /* SignInViewController.m */,
+				869A72C91AA2A15A00F0AA17 /* SignInViewController.xib */,
+			);
+			name = "Sign In";
+			sourceTree = "<group>";
+		};
+		869A72D21AA2AA8400F0AA17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				869A72D51AA2AAA400F0AA17 /* Social.framework */,
+				869A72D31AA2AAA000F0AA17 /* Accounts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		869A72F61AA2B90200F0AA17 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				869A72F71AA2B93700F0AA17 /* HomeViewController.h */,
+				869A72F81AA2B93700F0AA17 /* HomeViewController.m */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +260,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869A72D11AA2A2DC00F0AA17 /* Media.xcassets in Resources */,
+				869A72CB1AA2A15A00F0AA17 /* SignInViewController.xib in Resources */,
 				869A72A61AA28B5B00F0AA17 /* Main.storyboard in Resources */,
 				869A72AB1AA28B5B00F0AA17 /* LaunchScreen.xib in Resources */,
 				869A72A81AA28B5B00F0AA17 /* Images.xcassets in Resources */,
@@ -227,7 +285,9 @@
 				869A72A31AA28B5B00F0AA17 /* SecondViewController.m in Sources */,
 				869A729D1AA28B5B00F0AA17 /* AppDelegate.m in Sources */,
 				869A72A01AA28B5B00F0AA17 /* FirstViewController.m in Sources */,
+				869A72CA1AA2A15A00F0AA17 /* SignInViewController.m in Sources */,
 				869A729A1AA28B5B00F0AA17 /* main.m in Sources */,
+				869A72F91AA2B93700F0AA17 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
