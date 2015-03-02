@@ -8,6 +8,12 @@
 
 #import "IKTeeView.h"
 
+@interface IKTeeView ()
+
+@property (nonatomic) IKTee *tee;
+
+@end
+
 @implementation IKTeeView
 
 - (id)initWithFrame:(CGRect)frame {
@@ -22,12 +28,26 @@
 }
 
 - (void)displayTee:(IKTee *)tee {
+    _tee = tee;
     [_teeImageView setImage:[tee teeImage]];
     [_teeName setText:[tee name]];
     [_teeDescription setText:[tee about]];
     [_teeDesignerProfile setImage:[[tee designer] profile]];
     [_teeDesignerName setText:[[tee designer] name]];
     [_charityImageView setImage:[[tee charity] image]];
+    
+    UITapGestureRecognizer *tapg = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapd)];
+    [self.view addGestureRecognizer:tapg];
+}
+
+- (void)hideArrow {
+    [_arrow setHidden:YES];
+}
+
+- (void)tapd {
+    if (_delegate && [_delegate respondsToSelector:@selector(didSelectTee:)]) {
+        [_delegate didSelectTee:_tee];
+    }
 }
 
 @end

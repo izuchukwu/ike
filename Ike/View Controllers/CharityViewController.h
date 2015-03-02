@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "IKTeeView.h"
 #import "IKCharities.h"
 #import "IKCharityMetaView.h"
 
-@interface CharityViewController : UIViewController
+@interface CharityViewController : UIViewController<IKTeeViewDelegate>
 
 - (id)initWithCharity:(IKCharity *)charity;
 

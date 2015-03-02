@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IKTeeView">
             <connections>
+                <outlet property="arrow" destination="9hb-pF-K4v" id="CDA-jd-0a0"/>
                 <outlet property="charityImageView" destination="dUa-GJ-cBH" id="qkI-Sx-XMF"/>
                 <outlet property="teeDescription" destination="bpY-cb-81M" id="irx-ZW-E0y"/>
                 <outlet property="teeDesignerName" destination="UEQ-t9-C18" id="60D-cX-sA0"/>

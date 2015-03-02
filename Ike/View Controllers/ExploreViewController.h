@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <Accounts/Accounts.h>
 
+#import "IKTeeView.h"
 #import "IKCauseView.h"
+#import "ItemViewController.h"
 #import "CauseViewController.h"
 #import "CharityViewController.h"
 
-@interface ExploreViewController : UIViewController<IKCauseViewDelegate>
+@interface ExploreViewController : UIViewController<IKCauseViewDelegate, IKTeeViewDelegate>
 
 @end

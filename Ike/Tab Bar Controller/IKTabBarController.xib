@@ -14,6 +14,9 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tabbar-divider" translatesAutoresizingMaskIntoConstraints="NO" id="oQk-jB-cDK">
+                    <rect key="frame" x="0.0" y="-1" width="375" height="47"/>
+                </imageView>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kcv-BJ-yRQ">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cFa-9w-TCw">
@@ -22,27 +25,8 @@
                     </view>
                     <blurEffect style="extraLight"/>
                 </visualEffectView>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pD-Hf-kOF" userLabel="Create">
-                    <rect key="frame" x="150" y="0.0" width="75" height="45"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" image="tabbar-item-create-un">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" image="tabbar-item-create"/>
-                    <state key="highlighted" image="tabbar-item-create"/>
-                </button>
-                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njQ-oV-ZUQ" userLabel="Me">
-                    <rect key="frame" x="300" y="0.0" width="75" height="45"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <inset key="contentEdgeInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" image="tabbar-item-me-un">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" image="tabbar-item-me"/>
-                    <state key="highlighted" image="tabbar-item-me"/>
-                </button>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJE-5n-l9t" userLabel="Liked">
-                    <rect key="frame" x="225" y="0.0" width="75" height="45"/>
+                    <rect key="frame" x="282" y="0.0" width="94" height="45"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <inset key="contentEdgeInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                     <state key="normal" image="tabbar-item-liked-un">
@@ -51,8 +35,17 @@
                     <state key="selected" image="tabbar-item-liked"/>
                     <state key="highlighted" image="tabbar-item-liked"/>
                 </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pD-Hf-kOF" userLabel="Create">
+                    <rect key="frame" x="188" y="0.0" width="94" height="45"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="tabbar-item-create-un">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="tabbar-item-create"/>
+                    <state key="highlighted" image="tabbar-item-create"/>
+                </button>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obJ-bV-dOA" userLabel="Charities">
-                    <rect key="frame" x="75" y="0.0" width="75" height="45"/>
+                    <rect key="frame" x="94" y="0.0" width="94" height="45"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <inset key="contentEdgeInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                     <state key="normal" image="tabbar-item-charities-un">
@@ -62,7 +55,7 @@
                     <state key="highlighted" image="tabbar-item-charities"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOU-Zk-y7H" userLabel="Explore">
-                    <rect key="frame" x="0.0" y="0.0" width="75" height="45"/>
+                    <rect key="frame" x="0.0" y="0.0" width="94" height="45"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" image="tabbar-item-explore-un">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,9 +63,6 @@
                     <state key="selected" image="tabbar-item-explore"/>
                     <state key="highlighted" image="tabbar-item-explore"/>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tabbar-divider" translatesAutoresizingMaskIntoConstraints="NO" id="oQk-jB-cDK">
-                    <rect key="frame" x="0.0" y="-1" width="375" height="47"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -90,7 +80,5 @@
         <image name="tabbar-item-explore-un" width="45" height="29"/>
         <image name="tabbar-item-liked" width="28" height="27"/>
         <image name="tabbar-item-liked-un" width="28" height="27"/>
-        <image name="tabbar-item-me" width="17" height="28"/>
-        <image name="tabbar-item-me-un" width="17" height="28"/>
     </resources>
 </document>

@@ -53,7 +53,6 @@
             [_delegate didSelectCharity:[_charities objectAtIndex:page]];
         }
     }
-    
 }
 
 - (void)displayCharities:(NSArray *)charities {

@@ -11,6 +11,7 @@
 #import "IKCauseView.h"
 #import "IKTees.h"
 #import "IKTeeView.h"
+#import "ItemViewController.h"
 
 @interface CharityViewController ()
 
@@ -64,6 +65,7 @@
         IKTee *tee = [rtees objectAtIndex:i];
         CGRect fr = CGRectMake(0, causeView.frame.size.height + metaView.frame.size.height + (i * 400) + ((i + 1) * 15), 0, 0);
         IKTeeView *teeView = [[IKTeeView alloc] initWithFrame:fr];
+        [teeView setDelegate:self];
         [teeView displayTee:tee];
         [_scrollView addSubview:teeView];
         
@@ -79,6 +81,11 @@
     [footer setContentMode:UIViewContentModeCenter];
     
     [_scrollView setContentSize:CGSizeMake(_scrollView.frame.size.width, 64 + causeView.frame.size.height + metaView.frame.size.height + (([rtees count] > 20 ? 20 : [rtees count]) * 400) + (([rtees count] > 20 ? 20 : [rtees count]) * 15))];
+}
+
+- (void)didSelectTee:(IKTee *)tee {
+    ItemViewController *causevc = [[ItemViewController alloc] initWithTee:tee];
+    [[self navigationController] pushViewController:causevc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

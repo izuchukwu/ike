@@ -11,7 +11,6 @@
 
 #import "IKCharities.h"
 #import "IKTees.h"
-#import "IKTeeView.h"
 
 @interface ExploreViewController ()
 
@@ -54,6 +53,7 @@
         IKTee *tee = [rtees objectAtIndex:i];
         CGRect fr = CGRectMake(0, causeView.frame.size.height + (i * 400) + ((i + 1) * 15), 0, 0);
         IKTeeView *teeView = [[IKTeeView alloc] initWithFrame:fr];
+        [teeView setDelegate:self];
         [teeView displayTee:tee];
         [_scrollView addSubview:teeView];
         
@@ -95,6 +95,11 @@
 
 - (void)didSelectCause:(IKCharity *)charity {
     CauseViewController *causevc = [[CauseViewController alloc] initWithCharity:charity];
+    [[self navigationController] pushViewController:causevc animated:YES];
+}
+
+- (void)didSelectTee:(IKTee *)tee {
+    ItemViewController *causevc = [[ItemViewController alloc] initWithTee:tee];
     [[self navigationController] pushViewController:causevc animated:YES];
 }
 
